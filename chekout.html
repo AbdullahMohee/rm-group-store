@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="cart.html">Cart</a>
+</nav>
+
+<h2>Checkout</h2>
+
+<form onsubmit="return validateForm()">
+  <input type="text" id="name" placeholder="Full Name" required><br>
+  <input type="text" id="address" placeholder="Shipping Address" required><br>
+  <button type="submit">Place Order</button>
+</form>
+
+<script>
+function validateForm(){
+  let name = document.getElementById("name").value;
+  let address = document.getElementById("address").value;
+
+  if(name === "" || address === ""){
+    alert("Please fill all fields");
+    return false;
+  }
+
+  alert("Order placed successfully ✅");
+  return true;
+}
+</script>
+
+</body>
+</html>
