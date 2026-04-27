@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="cart.html">Cart</a>
+</nav>
+
+<div id="details"></div>
+
+<script src="script.js"></script>
+<script>
+const id = new URLSearchParams(window.location.search).get("id");
+const product = products.find(p => p.id == id);
+
+document.getElementById("details").innerHTML = `
+  <h2>${product.name}</h2>
+  <img src="${product.image}" alt="${product.name}">
+  <p>${product.description}</p>
+  <p>Price: $${product.price}</p>
+  <button onclick="addToCart(${product.id})">Add to Cart</button>
+`;
+</script>
+
+</body>
+</html>
